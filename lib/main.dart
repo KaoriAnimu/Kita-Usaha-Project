@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'create_account.dart';
 import 'login_page.dart';
 
 void main() {
@@ -14,7 +15,11 @@ class KitaUsahaApp extends StatelessWidget {
     return MaterialApp(
       title: 'KitaUsaha',
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const CreateAccountPage(),
+      },
     );
   }
 }
