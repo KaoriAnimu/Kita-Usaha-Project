@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kita_usaha_app/home.dart';
 
 import 'create_account.dart';
 import 'login_page.dart';
@@ -19,6 +20,7 @@ class KitaUsahaApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const CreateAccountPage(),
+        '/home': (context) => const HomeMenuPage(),
       },
     );
   }
