@@ -19,7 +19,6 @@ class LoginScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // Logo
                 Container(
                   width: 100,
                   height: 100,
@@ -28,8 +27,7 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Image.asset(
-                      'assets/logo.png'), // Ganti dengan path logomu
+                  child: Image.asset('assets/logo.png'),
                 ),
                 const SizedBox(height: 24),
                 const Text(
@@ -41,8 +39,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 32),
-
-                // Username TextField
                 const TextField(
                   decoration: InputDecoration(
                     hintText: 'Username',
@@ -54,8 +50,6 @@ class LoginScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 16),
-
-                // Password TextField
                 const TextField(
                   obscureText: true,
                   decoration: InputDecoration(
@@ -68,8 +62,6 @@ class LoginScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 32),
-
-                // Login Button
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -86,8 +78,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-
-                // Forgot Password
                 TextButton(
                   onPressed: () {},
                   child: const Text(
@@ -96,8 +86,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-
-                // Create Button
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -114,8 +102,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-
-                // Don't Have an Account
                 const Text(
                   "Don't Have an Account?",
                   style: TextStyle(color: Colors.white70),
