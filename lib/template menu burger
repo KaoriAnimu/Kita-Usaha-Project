@@ -1,12 +1,12 @@
 /*
 import 'package:flutter/material.dart';
 
-class StreamHistoryPage extends StatefulWidget {
+class CCKitsPage extends StatefulWidget {
   @override
-  _SteamHistoryPageState createState() => _SteamHistoryPageState();
+  _CCKitsPageState createState() => _CCKitsPageState();
 }
 
-class _SteamHistoryPageState extends State<StreamHistoryPage> {
+class _CCKitsPageState extends State<CCKitsPage> {
   Widget _buildDrawerMenu() {
     return Container(
       decoration: BoxDecoration(
@@ -34,45 +34,54 @@ class _SteamHistoryPageState extends State<StreamHistoryPage> {
                   backgroundImage: AssetImage('assets/kitausaha_logo.png'),
                   backgroundColor: Colors.white,
                 ),
-                SizedBox(width: 12),
+                SizedBox(width: 14),
                 Text(
-                  'Live Shopping',
+                  'Content Creator \nKits',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 22),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
           ),
           ListTile(
             leading: Icon(Icons.link, color: Colors.white),
-            title: Text('Channel link', style: TextStyle(color: Colors.white)),
+            title:
+                Text('Banner Template', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/livemenu');
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
           ListTile(
             leading: Icon(Icons.camera_alt, color: Colors.white),
-            title: Text('Camera & audio setting',
-                style: TextStyle(color: Colors.white)),
+            title: Text('Power Point', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/cameraaudio');
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
           ListTile(
             leading: Icon(Icons.report, color: Colors.white),
-            title: Text('Stream report', style: TextStyle(color: Colors.white)),
+            title:
+                Text('Instagram Feed', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/streamreport');
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
           ListTile(
             leading: Icon(Icons.history, color: Colors.white),
-            title:
-                Text('Stream history', style: TextStyle(color: Colors.white)),
+            title: Text('Video Ads Template',
+                style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/streamhistory');
+              Navigator.pushNamed(context, '/cckits');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.history, color: Colors.white),
+            title: Text('Logo Design', style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
         ],
@@ -94,7 +103,7 @@ class _SteamHistoryPageState extends State<StreamHistoryPage> {
 
     return Scaffold(
       drawer: Container(
-        width: screenWidth * 0.7,
+        width: screenWidth * 0.78,
         child: Drawer(
           child: _buildDrawerMenu(),
         ),
@@ -131,7 +140,7 @@ class _SteamHistoryPageState extends State<StreamHistoryPage> {
                   ),
                   SizedBox(width: 8),
                   Text(
-                    'Camera & audio setting',
+                    'Banner Template',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.06),
@@ -148,4 +157,5 @@ class _SteamHistoryPageState extends State<StreamHistoryPage> {
     );
   }
 }
+
 */
