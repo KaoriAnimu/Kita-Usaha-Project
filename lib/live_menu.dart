@@ -105,7 +105,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
             leading: Icon(Icons.link, color: Colors.white),
             title: Text('Channel link', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/livemenu');
             },
           ),
           ListTile(
@@ -113,14 +113,14 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
             title: Text('Camera & audio setting',
                 style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/cameraaudio');
             },
           ),
           ListTile(
             leading: Icon(Icons.report, color: Colors.white),
             title: Text('Stream report', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/streamreport');
             },
           ),
           ListTile(
@@ -128,7 +128,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
             title:
                 Text('Stream history', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/streamhistory');
             },
           ),
         ],
@@ -152,14 +152,13 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
           ),
         ),
         padding: EdgeInsets.symmetric(
-          horizontal: screenWidth * 0.06,
-          vertical: screenHeight * 0.05,
+          horizontal: screenWidth * 0.1,
+          vertical: screenHeight * 0.04,
         ),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Bar dengan burger menu dan judul channel link
               Row(
                 children: [
                   Builder(
@@ -185,8 +184,6 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
-
-              // Youtube label dan input
               Row(
                 children: [
                   Icon(Icons.play_circle_fill,
@@ -203,10 +200,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               _inputField(youtubeController, ''),
-
               SizedBox(height: screenHeight * 0.03),
-
-              // TikTok label dan input
               Row(
                 children: [
                   Icon(Icons.music_note,
@@ -223,10 +217,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               _inputField(tiktokController, 'Type a value'),
-
               SizedBox(height: screenHeight * 0.03),
-
-              // Shopee live label dan input
               Row(
                 children: [
                   Icon(Icons.shopping_cart,
@@ -243,7 +234,6 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               _inputField(shopeeController, 'Type a value'),
-
               SizedBox(height: screenHeight * 0.005),
               Text(
                 '+ ADD OTHERS',
@@ -252,10 +242,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                   fontSize: responsiveFontSize(screenWidth, 0.03),
                 ),
               ),
-
               SizedBox(height: screenHeight * 0.04),
-
-              // Panning Date
               Row(
                 children: [
                   Text(
@@ -295,8 +282,6 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
-
-              // Insert advertisment checkbox
               Row(
                 children: [
                   Text(
@@ -324,8 +309,6 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
-
-              // Advertising file dropdown
               Row(
                 children: [
                   Text(
@@ -368,8 +351,6 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
-
-              // Disabled comment checkbox
               Row(
                 children: [
                   Text(
@@ -396,10 +377,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                   ),
                 ],
               ),
-
               SizedBox(height: screenHeight * 0.05),
-
-              // Start live button
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -414,9 +392,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     elevation: 8,
                     shadowColor: Colors.black45,
                   ),
-                  onPressed: () {
-                    // TODO: Action start live
-                  },
+                  onPressed: () {},
                   child: Text(
                     'Start live',
                     style: TextStyle(
