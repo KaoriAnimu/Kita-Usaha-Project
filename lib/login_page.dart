@@ -66,6 +66,25 @@ class LoginScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: const Text(
+                            'Anda berhasil login',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'Roboto',
+                              fontSize: 16,
+                            ),
+                          ),
+                          backgroundColor: const Color(0xFF8E24AA),
+                          behavior: SnackBarBehavior.floating,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          margin: const EdgeInsets.all(16),
+                          duration: const Duration(seconds: 2),
+                        ),
+                      );
                       Navigator.pushNamed(context, '/home');
                     },
                     style: ElevatedButton.styleFrom(

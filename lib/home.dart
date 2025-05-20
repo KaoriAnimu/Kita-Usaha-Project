@@ -1,23 +1,37 @@
 import 'package:flutter/material.dart';
 
+class ParallelogramClipper extends CustomClipper<Path> {
+  final double topRightRatio;
+  final double bottomRightRatio;
+
+  ParallelogramClipper({
+    this.topRightRatio = 1,
+    this.bottomRightRatio = 0.85,
+  });
+
+  @override
+  Path getClip(Size size) {
+    final Path path = Path();
+    path.moveTo(0, 0);
+    path.lineTo(size.width * topRightRatio, 0);
+    path.lineTo(size.width * bottomRightRatio, size.height);
+    path.lineTo(0, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant ParallelogramClipper oldClipper) {
+    return topRightRatio != oldClipper.topRightRatio ||
+        bottomRightRatio != oldClipper.bottomRightRatio;
+  }
+}
+
 class HomeMenuPage extends StatelessWidget {
   const HomeMenuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<MenuItem> menuItems = [
-      MenuItem(title: 'Live Shopping', icon: 'assets/live_shopping.png'),
-      MenuItem(
-          title: 'Content Creator Kits', icon: 'assets/content_creator.png'),
-      MenuItem(title: 'Trade Insight', icon: 'assets/trade_insight.png'),
-      MenuItem(title: 'Margin Wizard', icon: 'assets/margin_wizard.png'),
-      MenuItem(title: 'The Circle', icon: 'assets/the_circle.png'),
-      MenuItem(title: 'UMKM Festival', icon: 'assets/umkm_festival.png'),
-      MenuItem(title: 'Success Bundle', icon: 'assets/success_bundle.png'),
-      MenuItem(title: 'Smart Ads', icon: 'assets/smart_ads.png'),
-      MenuItem(title: 'Open Partnership', icon: 'assets/open_partnership.png'),
-    ];
-
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -30,11 +44,16 @@ class HomeMenuPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.15,
+              ),
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Row(
                   children: [
                     Container(
+                      width: MediaQuery.of(context).size.width * 0.18,
+                      height: MediaQuery.of(context).size.height * 0.1,
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -51,43 +70,51 @@ class HomeMenuPage extends StatelessWidget {
                         },
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 5),
                     Expanded(
                       child: Stack(
                         children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 32, vertical: 16),
-                            margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF8E24AA),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: const Text(
-                              '"USAHA LEBIH MUDAH,\nBERKEMBANG LEBIH CEPAT"',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.0,
-                                height: 1.2,
+                          ClipPath(
+                            clipper: ParallelogramClipper(),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 1,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.095,
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.width * 0.15,
+                                vertical:
+                                    MediaQuery.of(context).size.height * 0.026,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF8E24AA),
+                              ),
+                              child: Text(
+                                '"USAHA LEBIH MUDAH,\nBERKEMBANG LEBIH CEPAT"',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.03,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.0,
+                                  height: 1.5,
+                                ),
                               ),
                             ),
                           ),
                           Positioned(
-                            right: 0,
-                            bottom: 0,
+                            right: MediaQuery.of(context).size.width * 0.11,
+                            bottom: MediaQuery.of(context).size.height * 0,
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 InkWell(
-                                  onTap: () {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                          content: Text('My Account clicked')),
-                                    );
-                                  },
+                                  onTap: () {},
                                   child: Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.21,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.025,
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 3, vertical: 1),
                                     decoration: BoxDecoration(
@@ -97,22 +124,48 @@ class HomeMenuPage extends StatelessWidget {
                                         bottomLeft: Radius.circular(4),
                                       ),
                                     ),
-                                    child: const Text(
+                                    child: Text(
                                       'My Account',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w600),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.034),
                                     ),
                                   ),
                                 ),
                                 InkWell(
                                   onTap: () {
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                          content: Text('Sign Out clicked')),
+                                      SnackBar(
+                                        content: const Text(
+                                          'Anda berhasil sign out',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w300,
+                                            fontFamily: 'Roboto',
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        backgroundColor:
+                                            const Color(0xFF8E24AA),
+                                        behavior: SnackBarBehavior.floating,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        margin: const EdgeInsets.all(16),
+                                        duration: const Duration(seconds: 2),
+                                      ),
                                     );
+                                    Navigator.pushNamed(context, '/login');
                                   },
                                   child: Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.155,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.025,
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 3, vertical: 1),
                                     decoration: const BoxDecoration(
@@ -122,11 +175,15 @@ class HomeMenuPage extends StatelessWidget {
                                         bottomRight: Radius.circular(4),
                                       ),
                                     ),
-                                    child: const Text(
+                                    child: Text(
                                       'Sign Out',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w600),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.034),
                                     ),
                                   ),
                                 ),
@@ -142,59 +199,418 @@ class HomeMenuPage extends StatelessWidget {
               const SizedBox(height: 8),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: GridView.count(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    children: menuItems.map((item) {
-                      return GestureDetector(
-                        onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('${item.title} clicked!')),
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(16),
-                            boxShadow: const [
-                              BoxShadow(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: GridView.count(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Live Shopping clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
                                   color: Colors.black26,
                                   blurRadius: 4,
-                                  offset: Offset(2, 2)),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                item.icon,
-                                width: 40,
-                                height: 40,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return const Icon(Icons.image_not_supported,
-                                      size: 40, color: Colors.white70);
-                                },
-                              ),
-                              const SizedBox(height: 8),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 4),
-                                child: Text(
-                                  item.title,
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                      color: Colors.white, fontSize: 12),
+                                  offset: Offset(2, 2),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/live_shopping.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Live Shopping',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      );
-                    }).toList(),
-                  ),
-                ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content:
+                                      Text('Content Creator Kits clicked!')),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/content_creator.png',
+                                  width: 40,
+                                  height: 40,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(Icons.image_not_supported,
+                                          size: 40, color: Colors.white70),
+                                ),
+                                const SizedBox(height: 8),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 4),
+                                  child: Text(
+                                    'Content Creator Kits',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
               ),
             ],
           ),
