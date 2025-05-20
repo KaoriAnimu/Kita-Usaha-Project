@@ -211,6 +211,7 @@ class HomeMenuPage extends StatelessWidget {
                               const SnackBar(
                                   content: Text('Live Shopping clicked!')),
                             );
+                            Navigator.pushNamed(context, '/livemenu');
                           },
                           child: Container(
                             decoration: BoxDecoration(
