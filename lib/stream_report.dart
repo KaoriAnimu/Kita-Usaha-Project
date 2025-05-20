@@ -12,6 +12,79 @@ class _StreamReportPageState extends State<StreamReportPage> {
   final List<String> streams = ['TIKTOK', 'YOUTUBE', 'SHOPEE LIVE'];
   final List<String> periods = ['1 MONTH', '3 MONTHS', '6 MONTHS'];
 
+  Widget _buildDrawerMenu() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.teal.shade900, Colors.green.shade600],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.teal.shade900, Colors.green.shade600],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                  backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                  backgroundColor: Colors.white,
+                ),
+                SizedBox(width: 12),
+                Text(
+                  'Live Shopping',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.link, color: Colors.white),
+            title: Text('Channel link', style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/livemenu');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.camera_alt, color: Colors.white),
+            title: Text('Camera & audio setting',
+                style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/cameraaudio');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.report, color: Colors.white),
+            title: Text('Stream report', style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/streamreport');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.history, color: Colors.white),
+            title:
+                Text('Stream history', style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/streamhistory');
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget buildDropdown(String label, String? value, List<String> items,
       ValueChanged<String?> onChanged) {
     return Row(
@@ -47,8 +120,8 @@ class _StreamReportPageState extends State<StreamReportPage> {
 
   Widget buildDataBox(String label, String value, bool isUp) {
     return Container(
-      width: 140,
-      height: 140,
+      width: MediaQuery.of(context).size.width * 0.4,
+      height: MediaQuery.of(context).size.height * 0.18,
       margin: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.85),
@@ -66,17 +139,20 @@ class _StreamReportPageState extends State<StreamReportPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(label.toUpperCase(),
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: Colors.grey[800],
-                )),
+            Text(
+              label.toUpperCase(),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.grey[800],
+              ),
+              textAlign: TextAlign.center,
+            ),
             SizedBox(height: 10),
             Text(value,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 32,
+                    fontSize: 28,
                     color: Colors.black87)),
             SizedBox(height: 10),
             Icon(
@@ -90,96 +166,101 @@ class _StreamReportPageState extends State<StreamReportPage> {
     );
   }
 
+  double responsiveFontSize(double screenWidth, double factor) {
+    double size = screenWidth * factor;
+    if (size < 12) return 12;
+    if (size > 24) return 24;
+    return size;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.purple.shade300, Colors.orange.shade400],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
+      drawer: Container(
+        width: screenWidth * 0.7,
+        child: Drawer(
+          child: _buildDrawerMenu(),
+        ),
+      ),
+      body: Container(
+        width: screenWidth * 2,
+        height: screenHeight * 2,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.purple.shade300, Colors.orange.shade400],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          Positioned(
-            top: -80,
-            right: -80,
-            child: Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.orange.shade200.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(100),
+        ),
+        padding: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.05,
+          vertical: screenHeight * 0.04,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Builder(
+                    builder: (context) => IconButton(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    'STREAM REPORT',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: responsiveFontSize(screenWidth, 0.06),
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
-            ),
+              SizedBox(height: 24),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  buildDropdown('Select stream', selectedStream, streams,
+                      (val) {
+                    setState(() {
+                      selectedStream = val;
+                    });
+                  }),
+                  SizedBox(height: 10),
+                  buildDropdown('Period', selectedPeriod, periods, (val) {
+                    setState(() {
+                      selectedPeriod = val;
+                    });
+                  }),
+                ],
+              ),
+              SizedBox(height: 30),
+              Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  buildDataBox('Stream (QTY)', '9', true),
+                  buildDataBox('Stream Time', '18:24:18', true),
+                  buildDataBox('Average Duration', '3:19:08', true),
+                  buildDataBox('Comment', '218', false),
+                  buildDataBox('Total Viewer', '4.8 K', true),
+                  buildDataBox('Highest Viewer', '1.3K', true),
+                  buildDataBox('Average Viewer', '824', false),
+                  buildDataBox('Total Product Check Out', '25', false),
+                ],
+              ),
+            ],
           ),
-          Positioned(
-            bottom: -100,
-            left: -60,
-            child: Container(
-              width: 220,
-              height: 220,
-              decoration: BoxDecoration(
-                color: Colors.purple.shade200.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(110),
-              ),
-            ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'STREAM REPORT',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26,
-                          color: Colors.white),
-                    ),
-                    SizedBox(height: 24),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        buildDropdown('Select stream', selectedStream, streams,
-                            (val) {
-                          setState(() {
-                            selectedStream = val;
-                          });
-                        }),
-                        SizedBox(width: 40),
-                        buildDropdown('Period', selectedPeriod, periods, (val) {
-                          setState(() {
-                            selectedPeriod = val;
-                          });
-                        }),
-                      ],
-                    ),
-                    SizedBox(height: 30),
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      children: [
-                        buildDataBox('Stream (QTY)', '9', true),
-                        buildDataBox('Stream Time', '18:24:18', true),
-                        buildDataBox('Average Duration', '3:19:08', true),
-                        buildDataBox('Comment', '218', false),
-                        buildDataBox('Total Viewer', '4.8 K', true),
-                        buildDataBox('Highest Viewer', '1.3K', true),
-                        buildDataBox('Average Viewer', '824', false),
-                        buildDataBox('Total Product Check Out', '25', false),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

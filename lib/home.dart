@@ -330,7 +330,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'Trade Insights',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),
@@ -344,8 +344,7 @@ class HomeMenuPage extends StatelessWidget {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
+                                  content: Text('Trade Insights clicked!')),
                             );
                           },
                           child: Container(
@@ -375,7 +374,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'Margin Wizard',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),
@@ -389,8 +388,7 @@ class HomeMenuPage extends StatelessWidget {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
+                                  content: Text('Margin Wizard clicked!')),
                             );
                           },
                           child: Container(
@@ -420,7 +418,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'The Circle',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),
@@ -434,8 +432,7 @@ class HomeMenuPage extends StatelessWidget {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
+                                  content: Text('The Circle clicked!')),
                             );
                           },
                           child: Container(
@@ -465,7 +462,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'UMKM Festivals',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),
@@ -479,8 +476,7 @@ class HomeMenuPage extends StatelessWidget {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
+                                  content: Text('UMKM Festivals clicked!')),
                             );
                           },
                           child: Container(
@@ -510,7 +506,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'Success Bundle',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),
@@ -524,8 +520,7 @@ class HomeMenuPage extends StatelessWidget {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
+                                  content: Text('Success Bundle clicked!')),
                             );
                           },
                           child: Container(
@@ -555,7 +550,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'Smart Ads',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),
@@ -569,8 +564,7 @@ class HomeMenuPage extends StatelessWidget {
                           onTap: () {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
+                                  content: Text('Smart Ads clicked!')),
                             );
                           },
                           child: Container(
@@ -600,7 +594,7 @@ class HomeMenuPage extends StatelessWidget {
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Text(
-                                    'Content Creator Kits',
+                                    'Open Partnership',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12),

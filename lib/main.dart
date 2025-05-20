@@ -5,6 +5,7 @@ import 'package:kita_usaha_app/home.dart';
 import 'create_account.dart';
 import 'live_menu.dart';
 import 'login_page.dart';
+import 'stream_history.dart';
 import 'stream_report.dart';
 
 void main() {
@@ -27,6 +28,7 @@ class KitaUsahaApp extends StatelessWidget {
         '/livemenu': (context) => LiveShoppingPage(),
         '/cameraaudio': (context) => CameraAudioSettingPage(),
         '/streamreport': (context) => StreamReportPage(),
+        '/streamhistory': (context) => StreamHistoryPage(),
       },
     );
   }

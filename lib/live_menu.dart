@@ -140,10 +140,11 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       drawer: Drawer(child: _buildDrawerMenu()),
       body: Container(
+        width: screenWidth * 2,
+        height: screenHeight * 2,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.purple.shade300, Colors.orange.shade300],
@@ -152,7 +153,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
           ),
         ),
         padding: EdgeInsets.symmetric(
-          horizontal: screenWidth * 0.1,
+          horizontal: screenWidth * 0.05,
           vertical: screenHeight * 0.04,
         ),
         child: SingleChildScrollView(
@@ -163,7 +164,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                 children: [
                   Builder(
                     builder: (context) => IconButton(
-                      icon: Icon(Icons.menu, color: Colors.black87),
+                      icon: Icon(Icons.menu, color: Colors.white),
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onPressed: () {
@@ -177,8 +178,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.06),
-                      decoration: TextDecoration.underline,
-                      color: Colors.black87,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -392,7 +392,9 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     elevation: 8,
                     shadowColor: Colors.black45,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
                   child: Text(
                     'Start live',
                     style: TextStyle(
