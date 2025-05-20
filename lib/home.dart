@@ -257,6 +257,7 @@ class HomeMenuPage extends StatelessWidget {
                                   content:
                                       Text('Content Creator Kits clicked!')),
                             );
+                            Navigator.pushNamed(context, '/cckits');
                           },
                           child: Container(
                             decoration: BoxDecoration(

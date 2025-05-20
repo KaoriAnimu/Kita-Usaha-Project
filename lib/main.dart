@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kita_usaha_app/camera_audio.dart';
 import 'package:kita_usaha_app/home.dart';
 
+import 'cc_kits.dart';
 import 'create_account.dart';
 import 'live_menu.dart';
 import 'login_page.dart';
@@ -29,6 +30,7 @@ class KitaUsahaApp extends StatelessWidget {
         '/cameraaudio': (context) => CameraAudioSettingPage(),
         '/streamreport': (context) => StreamReportPage(),
         '/streamhistory': (context) => StreamHistoryPage(),
+        '/cckits': (context) => CCKitsPage(),
       },
     );
   }

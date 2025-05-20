@@ -33,45 +33,54 @@ class _CCKitsPageState extends State<CCKitsPage> {
                   backgroundImage: AssetImage('assets/kitausaha_logo.png'),
                   backgroundColor: Colors.white,
                 ),
-                SizedBox(width: 12),
+                SizedBox(width: 14),
                 Text(
-                  'Content Creator Kits',
+                  'Content Creator \nKits',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 22),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
           ),
           ListTile(
             leading: Icon(Icons.link, color: Colors.white),
-            title: Text('Channel link', style: TextStyle(color: Colors.white)),
+            title:
+                Text('Banner Template', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/livemenu');
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
           ListTile(
             leading: Icon(Icons.camera_alt, color: Colors.white),
-            title: Text('Camera & audio setting',
-                style: TextStyle(color: Colors.white)),
+            title: Text('Power Point', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/cameraaudio');
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
           ListTile(
             leading: Icon(Icons.report, color: Colors.white),
-            title: Text('Stream report', style: TextStyle(color: Colors.white)),
+            title:
+                Text('Instagram Feed', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/streamreport');
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
           ListTile(
             leading: Icon(Icons.history, color: Colors.white),
-            title:
-                Text('Stream history', style: TextStyle(color: Colors.white)),
+            title: Text('Video Ads Template',
+                style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/streamhistory');
+              Navigator.pushNamed(context, '/cckits');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.history, color: Colors.white),
+            title: Text('Logo Design', style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/cckits');
             },
           ),
         ],
@@ -93,7 +102,7 @@ class _CCKitsPageState extends State<CCKitsPage> {
 
     return Scaffold(
       drawer: Container(
-        width: screenWidth * 0.7,
+        width: screenWidth * 0.78,
         child: Drawer(
           child: _buildDrawerMenu(),
         ),
