@@ -6,6 +6,18 @@ class CCKitsPage extends StatefulWidget {
 }
 
 class _CCKitsPageState extends State<CCKitsPage> {
+  String dropdownValue = 'Horizontal';
+
+  // Contoh gambar banner (ganti sesuai assetmu)
+  final List<String> bannerImages = [
+    'assets/banner1.png',
+    'assets/banner2.png',
+    'assets/banner3.png',
+    'assets/banner4.png',
+    'assets/banner5.png',
+    'assets/banner6.png',
+  ];
+
   Widget _buildDrawerMenu() {
     return Container(
       decoration: BoxDecoration(
@@ -77,7 +89,7 @@ class _CCKitsPageState extends State<CCKitsPage> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.history, color: Colors.white),
+            leading: Icon(Icons.design_services, color: Colors.white),
             title: Text('Logo Design', style: TextStyle(color: Colors.white)),
             onTap: () {
               Navigator.pushNamed(context, '/cckits');
@@ -108,8 +120,8 @@ class _CCKitsPageState extends State<CCKitsPage> {
         ),
       ),
       body: Container(
-        width: screenWidth * 2,
-        height: screenHeight * 2,
+        width: screenWidth * 1,
+        height: screenHeight * 1,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.purple.shade300, Colors.orange.shade400],
@@ -149,6 +161,60 @@ class _CCKitsPageState extends State<CCKitsPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
+              Row(
+                children: [
+                  Text(
+                    'Type',
+                    style: TextStyle(
+                      fontSize: responsiveFontSize(screenWidth, 0.045),
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  DropdownButton<String>(
+                    dropdownColor: Colors.white,
+                    value: dropdownValue,
+                    icon: Icon(Icons.arrow_drop_down),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownValue = newValue!;
+                      });
+                    },
+                    items: <String>['Horizontal', 'Vertical']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: responsiveFontSize(screenWidth, 0.045),
+                            )),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+              SizedBox(height: screenHeight * 0.03),
+              GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+                children: bannerImages.map((imagePath) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/coffeeshop');
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
             ],
           ),
         ),
