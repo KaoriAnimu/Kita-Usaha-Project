@@ -31,32 +31,38 @@ class _AdsPageState extends State<AdsPage> {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.teal.shade900, Colors.green.shade600],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.teal.shade900, Colors.green.shade600],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
               ),
-            ),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/kitausaha_logo.png'),
-                  backgroundColor: Colors.white,
-                ),
-                SizedBox(width: 14),
-                Text(
-                  'Content Creator \nKits',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                    backgroundColor: Colors.white,
+                  ),
+                  SizedBox(width: 14),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/home');
+                      print('Text tapped!');
+                    },
+                    child: Text(
+                      'Content Creator \nKits',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              )),
           ListTile(
             leading: Icon(Icons.link, color: Colors.white),
             title:
@@ -72,18 +78,18 @@ class _AdsPageState extends State<AdsPage> {
             leading: Icon(Icons.report, color: Colors.white),
             title:
                 Text('Instagram Feed', style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/cckits'),
+            onTap: () => Navigator.pushNamed(context, '/igf'),
           ),
           ListTile(
             leading: Icon(Icons.history, color: Colors.white),
             title: Text('Video Ads Template',
                 style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/cckits'),
+            onTap: () => Navigator.pushNamed(context, '/vads'),
           ),
           ListTile(
             leading: Icon(Icons.history, color: Colors.white),
             title: Text('Logo Design', style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/cckits'),
+            onTap: () => Navigator.pushNamed(context, '/lgds'),
           ),
         ],
       ),

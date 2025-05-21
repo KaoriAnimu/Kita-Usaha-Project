@@ -69,13 +69,21 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
                   backgroundImage: AssetImage('assets/kitausaha_logo.png'),
                   backgroundColor: Colors.white,
                 ),
-                SizedBox(width: 12),
-                Text(
-                  'Live Shopping',
-                  style: TextStyle(
+                SizedBox(width: 14),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/home');
+                    print('Text tapped!');
+                  },
+                  child: Text(
+                    'Live Shopping',
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 22),
+                      fontSize: 22,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),
@@ -339,7 +347,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Container(
-        width: screenWidth * 0.6, // Drawer 60% layar
+        width: screenWidth * 0.7, // Drawer 60% layar
         child: Drawer(
           child: _buildDrawerMenu(),
         ),
@@ -358,7 +366,6 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header Bar with burger menu and title
                 Row(
                   children: [
                     Builder(

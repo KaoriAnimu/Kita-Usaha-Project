@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class CCKitsPage extends StatefulWidget {
+class VAdsPage extends StatefulWidget {
   @override
-  _CCKitsPageState createState() => _CCKitsPageState();
+  _VAdsPageState createState() => _VAdsPageState();
 }
 
-class _CCKitsPageState extends State<CCKitsPage> {
+class _VAdsPageState extends State<VAdsPage> {
   String dropdownValue = 'Horizontal';
 
   final List<String> bannerImages = [
@@ -156,7 +156,7 @@ class _CCKitsPageState extends State<CCKitsPage> {
                   ),
                   SizedBox(width: 8),
                   Text(
-                    'Banner Template',
+                    'Video Ads Template',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.06),
@@ -208,7 +208,7 @@ class _CCKitsPageState extends State<CCKitsPage> {
                 children: bannerImages.map((imagePath) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/coffeeshop');
+                      Navigator.canPop(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),

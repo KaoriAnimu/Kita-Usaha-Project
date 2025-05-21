@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CCKitsPage extends StatefulWidget {
+class LogoDesignPage extends StatefulWidget {
   @override
-  _CCKitsPageState createState() => _CCKitsPageState();
+  _LogoDesignPageState createState() => _LogoDesignPageState();
 }
 
-class _CCKitsPageState extends State<CCKitsPage> {
-  String dropdownValue = 'Horizontal';
-
-  final List<String> bannerImages = [
-    'assets/banner1.png',
-    'assets/banner2.png',
-    'assets/banner3.png',
-    'assets/banner4.png',
-    'assets/banner5.png',
-    'assets/banner6.png',
+class _LogoDesignPageState extends State<LogoDesignPage> {
+  final List<Map<String, String>> ads = [
+    {'title': 'Logo 1', 'subtitle': 'By: Larena Inc'},
+    {'title': 'Logo 2', 'subtitle': 'By: Larena Inc'},
+    {'title': 'Logo 3', 'subtitle': 'Presented by Company'},
+    {'title': 'Logo 4', 'subtitle': 'By: Larena Inc'},
+    {'title': 'Logo 5', 'subtitle': ''},
+    {'title': 'Logo 6', 'subtitle': 'New Collection 2024'},
+    {'title': 'Logo 7', 'subtitle': 'Tim Lemon'},
+    {'title': 'Logo 8', 'subtitle': 'By Larena Inc'},
+    {'title': 'Logo 9', 'subtitle': 'Presentasi'},
   ];
 
   Widget _buildDrawerMenu() {
@@ -66,39 +67,29 @@ class _CCKitsPageState extends State<CCKitsPage> {
             leading: Icon(Icons.link, color: Colors.white),
             title:
                 Text('Banner Template', style: TextStyle(color: Colors.white)),
-            onTap: () {
-              Navigator.pushNamed(context, '/cckits');
-            },
+            onTap: () => Navigator.pushNamed(context, '/cckits'),
           ),
           ListTile(
             leading: Icon(Icons.camera_alt, color: Colors.white),
             title: Text('Power Point', style: TextStyle(color: Colors.white)),
-            onTap: () {
-              Navigator.pushNamed(context, '/ads');
-            },
+            onTap: () => Navigator.pushNamed(context, '/ads'),
           ),
           ListTile(
             leading: Icon(Icons.report, color: Colors.white),
             title:
                 Text('Instagram Feed', style: TextStyle(color: Colors.white)),
-            onTap: () {
-              Navigator.pushNamed(context, '/igf');
-            },
+            onTap: () => Navigator.pushNamed(context, '/igf'),
           ),
           ListTile(
             leading: Icon(Icons.history, color: Colors.white),
             title: Text('Video Ads Template',
                 style: TextStyle(color: Colors.white)),
-            onTap: () {
-              Navigator.pushNamed(context, '/vads');
-            },
+            onTap: () => Navigator.pushNamed(context, '/vads'),
           ),
           ListTile(
-            leading: Icon(Icons.design_services, color: Colors.white),
+            leading: Icon(Icons.history, color: Colors.white),
             title: Text('Logo Design', style: TextStyle(color: Colors.white)),
-            onTap: () {
-              Navigator.pushNamed(context, '/lgds');
-            },
+            onTap: () => Navigator.pushNamed(context, '/lgds'),
           ),
         ],
       ),
@@ -120,13 +111,11 @@ class _CCKitsPageState extends State<CCKitsPage> {
     return Scaffold(
       drawer: Container(
         width: screenWidth * 0.78,
-        child: Drawer(
-          child: _buildDrawerMenu(),
-        ),
+        child: Drawer(child: _buildDrawerMenu()),
       ),
       body: Container(
-        width: screenWidth * 1,
-        height: screenHeight * 1,
+        width: screenWidth * 2,
+        height: screenHeight * 2,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.purple.shade300, Colors.orange.shade400],
@@ -149,14 +138,12 @@ class _CCKitsPageState extends State<CCKitsPage> {
                       icon: Icon(Icons.menu, color: Colors.white),
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
-                      onPressed: () {
-                        Scaffold.of(context).openDrawer();
-                      },
+                      onPressed: () => Scaffold.of(context).openDrawer(),
                     ),
                   ),
                   SizedBox(width: 8),
                   Text(
-                    'Banner Template',
+                    'Logo Design',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.06),
@@ -166,63 +153,102 @@ class _CCKitsPageState extends State<CCKitsPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
-              Row(
-                children: [
-                  Text(
-                    'Type',
-                    style: TextStyle(
-                      fontSize: responsiveFontSize(screenWidth, 0.045),
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(width: 12),
-                  DropdownButton<String>(
-                    dropdownColor: Colors.white,
-                    value: dropdownValue,
-                    icon: Icon(Icons.arrow_drop_down),
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownValue = newValue!;
-                      });
-                    },
-                    items: <String>['Horizontal', 'Vertical']
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: responsiveFontSize(screenWidth, 0.045),
-                            )),
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),
-              SizedBox(height: screenHeight * 0.03),
-              GridView.count(
-                crossAxisCount: 2,
+              GridView.builder(
+                itemCount: ads.length,
                 shrinkWrap: true,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12,
-                children: bannerImages.map((imagePath) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/coffeeshop');
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        imagePath,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                ),
+                itemBuilder: (context, index) {
+                  final item = ads[index];
+                  return AdCard(
+                    title: item['title']!,
+                    subtitle: item['subtitle']!,
                   );
-                }).toList(),
+                },
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AdCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+
+  const AdCard({
+    Key? key,
+    required this.title,
+    required this.subtitle,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      color: Colors.white70,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            flex: 10,
+            child: Container(
+              height: MediaQuery.of(context).size.height * 2,
+              margin: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey.shade300),
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.grey.shade100,
+              ),
+              child: Center(
+                child: Icon(
+                  Icons.image,
+                  size: 48,
+                  color: Colors.grey.shade400,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  if (subtitle.isNotEmpty) ...[
+                    SizedBox(height: 4),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey.shade600,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

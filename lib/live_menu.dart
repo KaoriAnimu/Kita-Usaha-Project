@@ -90,13 +90,21 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                   backgroundImage: AssetImage('assets/kitausaha_logo.png'),
                   backgroundColor: Colors.white,
                 ),
-                SizedBox(width: 12),
-                Text(
-                  'Live Shopping',
-                  style: TextStyle(
+                SizedBox(width: 14),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/home');
+                    print('Text tapped!');
+                  },
+                  child: Text(
+                    'Live Shopping',
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 22),
+                      fontSize: 22,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),

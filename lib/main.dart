@@ -6,10 +6,13 @@ import 'ads.dart';
 import 'cc_kits.dart';
 import 'coffeeshop.dart';
 import 'create_account.dart';
+import 'ig_feeds.dart';
 import 'live_menu.dart';
 import 'login_page.dart';
+import 'logo_design.dart';
 import 'stream_history.dart';
 import 'stream_report.dart';
+import 'video_ads.dart';
 
 void main() {
   runApp(const KitaUsahaApp());
@@ -35,6 +38,9 @@ class KitaUsahaApp extends StatelessWidget {
         '/cckits': (context) => CCKitsPage(),
         '/coffeeshop': (context) => CoffeeShopPage(),
         '/ads': (context) => AdsPage(),
+        '/igf': (context) => IGFeedsPage(),
+        '/vads': (context) => VAdsPage(),
+        '/lgds': (context) => LogoDesignPage(),
       },
     );
   }
