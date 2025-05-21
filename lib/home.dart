@@ -343,10 +343,7 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Trade Insights clicked!')),
-                            );
+                            Navigator.pushNamed(context, '/mw');
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -475,10 +472,7 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('UMKM Festivals clicked!')),
-                            );
+                            Navigator.pushNamed(context, '/sb');
                           },
                           child: Container(
                             decoration: BoxDecoration(

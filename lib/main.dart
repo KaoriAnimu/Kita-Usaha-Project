@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kita_usaha_app/camera_audio.dart';
 import 'package:kita_usaha_app/home.dart';
+import 'package:kita_usaha_app/success_bund.dart';
 
 import 'ads.dart';
 import 'cc_kits.dart';
@@ -10,6 +11,7 @@ import 'ig_feeds.dart';
 import 'live_menu.dart';
 import 'login_page.dart';
 import 'logo_design.dart';
+import 'margin_wiz.dart';
 import 'stream_history.dart';
 import 'stream_report.dart';
 import 'video_ads.dart';
@@ -41,6 +43,8 @@ class KitaUsahaApp extends StatelessWidget {
         '/igf': (context) => IGFeedsPage(),
         '/vads': (context) => VAdsPage(),
         '/lgds': (context) => LogoDesignPage(),
+        '/mw': (context) => MarginWizardPage(),
+        '/sb': (context) => PricingPage(),
       },
     );
   }
