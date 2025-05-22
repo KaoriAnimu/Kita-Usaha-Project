@@ -347,7 +347,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       drawer: Container(
-        width: screenWidth * 0.7, // Drawer 60% layar
+        width: screenWidth * 0.7,
         child: Drawer(
           child: _buildDrawerMenu(),
         ),
@@ -355,7 +355,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.purple.shade300, Colors.orange.shade300],
+            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -390,7 +390,6 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
                   ],
                 ),
                 SizedBox(height: 24),
-                // Konten portrait dan landscape
                 buildPortraitSection(screenWidth),
                 buildLandscapeSection(screenWidth),
                 Center(
