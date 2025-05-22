@@ -24,6 +24,24 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
       initialDate: selectedDate ?? DateTime.now(),
       firstDate: DateTime(2023),
       lastDate: DateTime(2100),
+      builder: (context, child) {
+        // Supaya dialog date picker juga dark mode
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: Colors.tealAccent.shade700,
+              onPrimary: Colors.white,
+              onSurface: Colors.black87,
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.tealAccent.shade700,
+              ),
+            ),
+          ),
+          child: child!,
+        );
+      },
     );
     if (picked != null && picked != selectedDate) {
       setState(() {
@@ -42,24 +60,28 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
   Widget _inputField(TextEditingController controller, String hint) {
     return TextField(
       controller: controller,
+      style: TextStyle(color: Colors.white), // teks input warna putih
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white,
+        fillColor: Colors.transparent,
         hintText: hint,
+        hintStyle:
+            TextStyle(color: Colors.white70), // hint warna putih transparan
         contentPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 14),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey.shade400),
+          borderSide: BorderSide(color: Colors.white70),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey.shade300),
+          borderSide: BorderSide(color: Colors.white54),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.blueAccent),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
+      cursorColor: Colors.white,
     );
   }
 
@@ -202,6 +224,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -219,6 +242,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -236,6 +260,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -258,6 +283,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                   Expanded(
@@ -269,18 +295,16 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                           vertical: 12,
                         ),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey.shade400),
+                          border: Border.all(color: Colors.white70),
                           borderRadius: BorderRadius.circular(8),
-                          color: Colors.white,
+                          color: Colors.transparent,
                         ),
                         child: Text(
                           selectedDate == null
                               ? 'Select a date'
                               : '${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}',
                           style: TextStyle(
-                            color: selectedDate == null
-                                ? Colors.grey
-                                : Colors.black,
+                            color: Colors.white70,
                             fontSize: responsiveFontSize(screenWidth, 0.04),
                           ),
                         ),
@@ -297,6 +321,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                   Checkbox(
@@ -306,12 +331,15 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                         insertAdvertisment = val ?? false;
                       });
                     },
+                    checkColor: Colors.tealAccent.shade700,
+                    activeColor: Colors.white24,
                   ),
                   Text(
                     'Yes',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -324,16 +352,20 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(width: 12),
                   Expanded(
                     child: DropdownButton<String>(
                       isExpanded: true,
+                      dropdownColor: Color(0xFF9C27B0),
                       hint: Text(
                         'Select an item',
                         style: TextStyle(
-                            fontSize: responsiveFontSize(screenWidth, 0.04)),
+                          fontSize: responsiveFontSize(screenWidth, 0.04),
+                          color: Colors.white70,
+                        ),
                       ),
                       value: advertisingFile,
                       onChanged: (val) {
@@ -349,7 +381,8 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                                 e,
                                 style: TextStyle(
                                     fontSize:
-                                        responsiveFontSize(screenWidth, 0.04)),
+                                        responsiveFontSize(screenWidth, 0.04),
+                                    color: Colors.white),
                               ),
                             ),
                           )
@@ -366,6 +399,7 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                   Checkbox(
@@ -375,12 +409,15 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
                         disabledComment = val ?? false;
                       });
                     },
+                    checkColor: Colors.tealAccent.shade700,
+                    activeColor: Colors.white24,
                   ),
                   Text(
                     'Yes',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: responsiveFontSize(screenWidth, 0.04),
+                      color: Colors.white,
                     ),
                   ),
                 ],

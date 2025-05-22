@@ -59,10 +59,17 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 label: 'Pilih platform',
                 child: DropdownButton<String>(
                   value: selectedPlatform,
-                  dropdownColor: Colors.white,
-                  style: TextStyle(color: Colors.black),
+                  dropdownColor: Color(0xFF9C27B0),
+                  style: TextStyle(color: Colors.white),
+                  iconEnabledColor: Colors.white,
                   items: ['Youtube', 'Facebook', 'Instagram']
-                      .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                      .map((e) => DropdownMenuItem(
+                            child: Text(
+                              e,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: e,
+                          ))
                       .toList(),
                   onChanged: (val) {
                     setState(() {
@@ -76,10 +83,17 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 label: 'Period',
                 child: DropdownButton<String>(
                   value: selectedPeriod,
-                  dropdownColor: Colors.white,
-                  style: TextStyle(color: Colors.black),
+                  dropdownColor: Color(0xFF9C27B0),
+                  style: TextStyle(color: Colors.white),
+                  iconEnabledColor: Colors.white,
                   items: ['1 MONTH', '3 MONTHS', '6 MONTHS']
-                      .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                      .map((e) => DropdownMenuItem(
+                            child: Text(
+                              e,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: e,
+                          ))
                       .toList(),
                   onChanged: (val) {
                     setState(() {
@@ -92,24 +106,30 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
               buildDropdownRow(
                 label: 'Panning Date',
                 child: TextField(
+                  controller: TextEditingController(text: panningDate),
                   decoration: InputDecoration(
                     hintText: 'dd-mm-yyyy',
-                    fillColor: Colors.white,
+                    hintStyle: TextStyle(color: Colors.white70),
+                    fillColor: Colors.transparent,
                     filled: true,
-                    border: OutlineInputBorder(
+                    enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4),
-                      borderSide: BorderSide.none,
+                      borderSide: BorderSide(color: Colors.white70),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4),
+                      borderSide: BorderSide(color: Colors.white),
                     ),
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   ),
+                  style: TextStyle(color: Colors.white),
                   keyboardType: TextInputType.datetime,
                   onChanged: (value) {
                     setState(() {
                       panningDate = value;
                     });
                   },
-                  controller: TextEditingController(text: panningDate),
                 ),
               ),
               SizedBox(height: 12),
@@ -117,14 +137,21 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 label: 'Segmentasi usia',
                 child: DropdownButton<String>(
                   value: selectedAgeSegment,
-                  dropdownColor: Colors.white,
-                  style: TextStyle(color: Colors.black),
+                  dropdownColor: Color(0xFF9C27B0),
+                  style: TextStyle(color: Colors.white),
+                  iconEnabledColor: Colors.white,
                   items: [
                     '21 - 28 Tahun',
                     '29 - 35 Tahun',
                     '36 - 45 Tahun',
                   ]
-                      .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                      .map((e) => DropdownMenuItem(
+                            child: Text(
+                              e,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: e,
+                          ))
                       .toList(),
                   onChanged: (val) {
                     setState(() {
@@ -138,15 +165,22 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 label: 'Segmentasi Hobi',
                 child: DropdownButton<String>(
                   value: selectedHobbySegment,
-                  dropdownColor: Colors.white,
-                  style: TextStyle(color: Colors.black),
+                  dropdownColor: Color(0xFF9C27B0),
+                  style: TextStyle(color: Colors.white),
+                  iconEnabledColor: Colors.white,
                   items: [
                     'Fashion',
                     'Sports',
                     'Technology',
                     'Travel',
                   ]
-                      .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                      .map((e) => DropdownMenuItem(
+                            child: Text(
+                              e,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: e,
+                          ))
                       .toList(),
                   onChanged: (val) {
                     setState(() {
@@ -160,15 +194,22 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 label: 'Segmentasi Profesi',
                 child: DropdownButton<String>(
                   value: selectedProfessionSegment,
-                  dropdownColor: Colors.white,
-                  style: TextStyle(color: Colors.black),
+                  dropdownColor: Color(0xFF9C27B0),
+                  style: TextStyle(color: Colors.white),
+                  iconEnabledColor: Colors.white,
                   items: [
                     'None',
                     'Engineer',
                     'Doctor',
                     'Teacher',
                   ]
-                      .map((e) => DropdownMenuItem(child: Text(e), value: e))
+                      .map((e) => DropdownMenuItem(
+                            child: Text(
+                              e,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: e,
+                          ))
                       .toList(),
                   onChanged: (val) {
                     setState(() {
@@ -187,14 +228,21 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                     onChanged: (val) {
                       professionText = val;
                     },
+                    style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      fillColor: Colors.white,
+                      fillColor: Colors.transparent,
                       filled: true,
+                      hintStyle: TextStyle(color: Colors.white70),
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                          borderSide: BorderSide.none),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(color: Colors.white70),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
