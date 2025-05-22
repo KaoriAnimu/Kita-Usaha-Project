@@ -49,7 +49,6 @@ class _IGFeedsPageState extends State<IGFeedsPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/home');
-                      print('Text tapped!');
                     },
                     child: Text(
                       'Content Creator \nKits',
@@ -64,31 +63,43 @@ class _IGFeedsPageState extends State<IGFeedsPage> {
                 ],
               )),
           ListTile(
-            leading: Icon(Icons.link, color: Colors.white),
+            leading: Icon(Icons.comment_bank_rounded, color: Colors.white),
             title:
                 Text('Banner Template', style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/cckits'),
+            onTap: () {
+              Navigator.pushNamed(context, '/cckits');
+            },
           ),
           ListTile(
-            leading: Icon(Icons.camera_alt, color: Colors.white),
+            leading: Icon(Icons.shop_outlined, color: Colors.white),
             title: Text('Power Point', style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/ads'),
+            onTap: () {
+              Navigator.pushNamed(context, '/ads');
+            },
           ),
           ListTile(
-            leading: Icon(Icons.report, color: Colors.white),
+            leading: Icon(Icons.feed, color: Colors.white),
             title:
                 Text('Instagram Feed', style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/igf'),
+            onTap: () {
+              Navigator.pushNamed(context, '/igf');
+            },
           ),
           ListTile(
-              leading: Icon(Icons.history, color: Colors.white),
-              title: Text('Video Ads Template',
-                  style: TextStyle(color: Colors.white)),
-              onTap: () => Navigator.pushNamed(context, '/vads')),
+            leading:
+                Icon(Icons.video_camera_back_outlined, color: Colors.white),
+            title: Text('Video Ads Template',
+                style: TextStyle(color: Colors.white)),
+            onTap: () {
+              Navigator.pushNamed(context, '/vads');
+            },
+          ),
           ListTile(
-            leading: Icon(Icons.history, color: Colors.white),
+            leading: Icon(Icons.design_services, color: Colors.white),
             title: Text('Logo Design', style: TextStyle(color: Colors.white)),
-            onTap: () => Navigator.pushNamed(context, '/lgds'),
+            onTap: () {
+              Navigator.pushNamed(context, '/lgds');
+            },
           ),
         ],
       ),
@@ -117,7 +128,7 @@ class _IGFeedsPageState extends State<IGFeedsPage> {
         height: screenHeight * 2,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.purple.shade300, Colors.orange.shade400],
+            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

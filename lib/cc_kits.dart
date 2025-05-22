@@ -62,7 +62,7 @@ class _CCKitsPageState extends State<CCKitsPage> {
                 ],
               )),
           ListTile(
-            leading: Icon(Icons.link, color: Colors.white),
+            leading: Icon(Icons.comment_bank_rounded, color: Colors.white),
             title:
                 Text('Banner Template', style: TextStyle(color: Colors.white)),
             onTap: () {
@@ -70,14 +70,14 @@ class _CCKitsPageState extends State<CCKitsPage> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.camera_alt, color: Colors.white),
+            leading: Icon(Icons.shop_outlined, color: Colors.white),
             title: Text('Power Point', style: TextStyle(color: Colors.white)),
             onTap: () {
               Navigator.pushNamed(context, '/ads');
             },
           ),
           ListTile(
-            leading: Icon(Icons.report, color: Colors.white),
+            leading: Icon(Icons.feed, color: Colors.white),
             title:
                 Text('Instagram Feed', style: TextStyle(color: Colors.white)),
             onTap: () {
@@ -85,7 +85,8 @@ class _CCKitsPageState extends State<CCKitsPage> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.history, color: Colors.white),
+            leading:
+                Icon(Icons.video_camera_back_outlined, color: Colors.white),
             title: Text('Video Ads Template',
                 style: TextStyle(color: Colors.white)),
             onTap: () {
