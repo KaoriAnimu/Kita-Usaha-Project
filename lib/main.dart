@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kita_usaha_app/camera_audio.dart';
 import 'package:kita_usaha_app/home.dart';
+import 'package:kita_usaha_app/smart_ads.dart';
 import 'package:kita_usaha_app/success_bund.dart';
 
 import 'ads.dart';
@@ -45,6 +46,7 @@ class KitaUsahaApp extends StatelessWidget {
         '/lgds': (context) => LogoDesignPage(),
         '/mw': (context) => MarginWizardPage(),
         '/sb': (context) => PricingPage(),
+        '/sa': (context) => SmartAdsPage(),
       },
     );
   }
