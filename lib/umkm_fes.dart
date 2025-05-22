@@ -1,4 +1,3 @@
-/*
 import 'package:flutter/material.dart';
 
 class UMKMFesPage extends StatefulWidget {
@@ -63,7 +62,7 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
             leading: Icon(Icons.app_registration, color: Colors.white),
             title: Text('Registration', style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/cckits');
+              Navigator.pushNamed(context, '/rum');
             },
           ),
           ListTile(
@@ -71,7 +70,7 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
             title: Text('Festival Schedule',
                 style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/cckits');
+              Navigator.pushNamed(context, '/fs');
             },
           ),
           ListTile(
@@ -79,7 +78,7 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
             title: Text('Feedback Customer',
                 style: TextStyle(color: Colors.white)),
             onTap: () {
-              Navigator.pushNamed(context, '/cckits');
+              Navigator.pushNamed(context, '/home');
             },
           ),
         ],
@@ -107,8 +106,8 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
         ),
       ),
       body: Container(
-        width: screenWidth * 2,
-        height: screenHeight * 2,
+        width: screenWidth,
+        height: screenHeight,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
@@ -148,6 +147,36 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
                 ],
               ),
               SizedBox(height: screenHeight * 0.03),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.brown.shade100.withOpacity(0.9),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: const Text(
+                  '🎉 FESTIVAL UMKM CILEGON 2025 🎉\n'
+                  '"Bersama Majukan Produk Lokal!"\n\n'
+                  '🟢 DIBUKA PENDAFTARAN UNTUK UMKM!\n'
+                  'Ayo bergabung dalam Festival UMKM Cilegon 2025 dan promosikan produk unggulanmu kepada ribuan pengunjung!\n\n'
+                  '🍴 Kuliner • Fashion • Kerajinan • Jasa • dan lainnya\n\n'
+                  '📍 Lokasi: Alun-Alun Kota Cilegon\n'
+                  '📅 Tanggal: 20-22 Juni 2025\n'
+                  '⏰ Waktu: 09.00 - 21.00 WIB\n\n'
+                  '⛔ Kuota terbatas untuk 50 UMKM pertama!\n\n'
+                  'Fasilitas untuk Peserta:\n'
+                  '✅ Tenda dan meja standar\n'
+                  '✅ Akses listrik\n'
+                  '✅ Publikasi di media sosial resmi\n'
+                  '✅ Sertifikat partisipasi\n\n'
+                  '🟢 Daftar sekarang!',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                    height: 1.4,
+                    color: Colors.black87,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -155,4 +184,3 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
     );
   }
 }
-*/

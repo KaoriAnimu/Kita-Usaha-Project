@@ -461,10 +461,7 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('The Circle clicked!')),
-                            );
+                            Navigator.pushNamed(context, '/uf');
                           },
                           child: Container(
                             decoration: BoxDecoration(

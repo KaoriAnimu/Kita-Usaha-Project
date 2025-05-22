@@ -48,7 +48,6 @@ class _CCKitsPageState extends State<CCKitsPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/home');
-                      print('Text tapped!');
                     },
                     child: Text(
                       'Content Creator \nKits',
@@ -129,7 +128,7 @@ class _CCKitsPageState extends State<CCKitsPage> {
         height: screenHeight * 1,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.purple.shade300, Colors.orange.shade400],
+            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
