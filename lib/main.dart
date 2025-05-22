@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kita_usaha_app/camera_audio.dart';
 import 'package:kita_usaha_app/home.dart';
+import 'package:kita_usaha_app/open_partner.dart';
 import 'package:kita_usaha_app/saty.dart';
 import 'package:kita_usaha_app/smart_ads.dart';
 import 'package:kita_usaha_app/success_bund.dart';
+import 'package:kita_usaha_app/umkm.dart';
 
 import 'ads.dart';
 import 'cc_kits.dart';
@@ -49,6 +51,8 @@ class KitaUsahaApp extends StatelessWidget {
         '/sb': (context) => PricingPage(),
         '/sa': (context) => SmartAdsPage(),
         '/saty': (context) => SmartAdsThankYouPage(),
+        '/op': (context) => const OpenPartnershipPage(),
+        '/umkm': (context) => const CreateUmkmPage(),
       },
     );
   }

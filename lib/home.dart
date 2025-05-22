@@ -587,10 +587,7 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Smart Ads clicked!')),
-                            );
+                            Navigator.pushNamed(context, '/op');
                           },
                           child: Container(
                             decoration: BoxDecoration(
