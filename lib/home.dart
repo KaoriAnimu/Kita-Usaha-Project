@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kita_usaha_app/circle.dart';
 
 class ParallelogramClipper extends CustomClipper<Path> {
   final double topRightRatio;
@@ -207,10 +208,6 @@ class HomeMenuPage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Live Shopping clicked!')),
-                            );
                             Navigator.pushNamed(context, '/livemenu');
                           },
                           child: Container(
@@ -252,11 +249,6 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content:
-                                      Text('Content Creator Kits clicked!')),
-                            );
                             Navigator.pushNamed(context, '/cckits');
                           },
                           child: Container(
@@ -380,9 +372,54 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Margin Wizard clicked!')),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => CircleHomePage(
+                                  circles: [
+                                    {
+                                      'title': 'CARA JUAL GORENGAN',
+                                      'host': 'KOKO RUDI',
+                                      'maxParticipant': '50/60',
+                                    },
+                                    {
+                                      'title': 'CARA MULAI USAHA DARI 0',
+                                      'host': 'ADHAN JR',
+                                      'maxParticipant': '83/100',
+                                    },
+                                    {
+                                      'title': 'CARA MULAI USAHA DARI 0',
+                                      'host': 'ADHAN JR',
+                                      'maxParticipant': '83/100',
+                                    },
+                                    {
+                                      'title': 'BELAJAR PENGEMBANGAN PRODUK',
+                                      'host': 'RINA APRILIA',
+                                      'maxParticipant': '45/50',
+                                    },
+                                    {
+                                      'title': 'TUTORIAL MARKETING DIGITAL',
+                                      'host': 'BUDI SETIAWAN',
+                                      'maxParticipant': '60/75',
+                                    },
+                                    {
+                                      'title': 'STRATEGI PENJUALAN ONLINE',
+                                      'host': 'SITI KAMILAH',
+                                      'maxParticipant': '30/40',
+                                    },
+                                    {
+                                      'title': 'PELATIHAN KEWIRAUSAHAAN',
+                                      'host': 'ANDI SAPUTRA',
+                                      'maxParticipant': '90/100',
+                                    },
+                                    {
+                                      'title': 'DESAIN PRODUK KREATIF',
+                                      'host': 'NINA WULANDARI',
+                                      'maxParticipant': '25/30',
+                                    },
+                                  ],
+                                ),
+                              ),
                             );
                           },
                           child: Container(
@@ -509,10 +546,7 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Success Bundle clicked!')),
-                            );
+                            Navigator.pushNamed(context, '/sa');
                           },
                           child: Container(
                             decoration: BoxDecoration(

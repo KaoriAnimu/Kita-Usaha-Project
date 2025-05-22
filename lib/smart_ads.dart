@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class SmartAdsPage extends StatefulWidget {
   @override
@@ -13,33 +12,47 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
   String selectedHobbySegment = 'Fashion';
   String selectedProfessionSegment = 'None';
   String professionText = 'Tangerang selatan';
-
-  DateTime? selectedDate;
+  String panningDate = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF7A37E9), Color(0xFFFF9D55)],
+            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          borderRadius: BorderRadius.circular(16),
         ),
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '< SMART ADS',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.white),
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/home');
+                    },
+                    splashRadius: 20,
+                    padding: EdgeInsets.zero,
+                    constraints: BoxConstraints(),
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    'SMART ADS',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.white),
+                  ),
+                ],
               ),
               SizedBox(height: 16),
               buildDropdownRow(
@@ -78,36 +91,25 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
               SizedBox(height: 12),
               buildDropdownRow(
                 label: 'Panning Date',
-                child: InkWell(
-                  onTap: () {
-                    DatePicker.showDatePicker(context, showTitleActions: true,
-                        onConfirm: (date) {
-                      setState(() {
-                        selectedDate = date;
-                      });
-                    }, currentTime: selectedDate ?? DateTime.now());
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'dd-mm-yyyy',
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(color: Colors.grey.shade300),
+                      borderSide: BorderSide.none,
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          selectedDate == null
-                              ? 'Select a date'
-                              : '${selectedDate!.day}-${selectedDate!.month}-${selectedDate!.year}',
-                          style: TextStyle(color: Colors.grey[700]),
-                        ),
-                        SizedBox(width: 8),
-                        Icon(Icons.calendar_today, size: 18),
-                      ],
-                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   ),
+                  keyboardType: TextInputType.datetime,
+                  onChanged: (value) {
+                    setState(() {
+                      panningDate = value;
+                    });
+                  },
+                  controller: TextEditingController(text: panningDate),
                 ),
               ),
               SizedBox(height: 12),
@@ -217,8 +219,7 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
                   onPressed: () {
-                    // action mail here
-                    print("Mail button pressed");
+                    Navigator.pushNamed(context, '/saty');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF73FF4A),
