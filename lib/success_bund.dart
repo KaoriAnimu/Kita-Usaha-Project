@@ -117,7 +117,7 @@ class _PricingPageState extends State<PricingPage> {
                   PricingCard(
                     title: 'BASIC',
                     price: isMonthly ? 'Rp 0 / Mo.' : 'Rp 0 / Mo.',
-                    iconPath: 'lib/assets/b3.jpg',
+                    iconPath: 'lib/assets/basic.png',
                     features: [
                       Feature(text: 'No Ads', isAvailable: false),
                       Feature(
@@ -139,7 +139,7 @@ class _PricingPageState extends State<PricingPage> {
                   PricingCard(
                     title: 'PRO',
                     price: isMonthly ? 'Rp 59.000 / Mo.' : 'Rp 59.000 / Mo.',
-                    iconPath: 'lib/assets/b3.jpg',
+                    iconPath: 'lib/assets/pro.png',
                     features: [
                       Feature(text: 'No Ads', isAvailable: true),
                       Feature(
@@ -161,7 +161,7 @@ class _PricingPageState extends State<PricingPage> {
                   PricingCard(
                     title: 'PRO +',
                     price: isMonthly ? 'Rp 89.000 / Mo.' : 'Rp 89.000 / Mo.',
-                    iconPath: 'lib/assets/b3.jpg',
+                    iconPath: 'lib/assets/pro+.png',
                     features: [
                       Feature(text: 'No Ads', isAvailable: true),
                       Feature(

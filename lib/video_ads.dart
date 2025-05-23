@@ -8,13 +8,13 @@ class VAdsPage extends StatefulWidget {
 class _VAdsPageState extends State<VAdsPage> {
   String dropdownValue = 'Horizontal';
 
-  final List<String> bannerImages = [
-    'assets/banner1.png',
-    'assets/banner2.png',
-    'assets/banner3.png',
-    'assets/banner4.png',
-    'assets/banner5.png',
-    'assets/banner6.png',
+  final List<String> VADSImages = [
+    'lib/assets/q1.jpg',
+    'lib/assets/q2.jpg',
+    'lib/assets/q3.jpg',
+    'lib/assets/q4.jpg',
+    'lib/assets/q5.jpg',
+    'lib/assets/q6.jpg',
   ];
 
   Widget _buildDrawerMenu() {
@@ -209,7 +209,7 @@ class _VAdsPageState extends State<VAdsPage> {
                 shrinkWrap: true,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
-                children: bannerImages.map((imagePath) {
+                children: VADSImages.map((imagePath) {
                   return GestureDetector(
                     onTap: () {
                       Navigator.canPop(context);
@@ -217,7 +217,7 @@ class _VAdsPageState extends State<VAdsPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
-                        'lib/assets/b3.jpg',
+                        imagePath,
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height,
                       ),

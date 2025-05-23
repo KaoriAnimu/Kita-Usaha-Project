@@ -187,7 +187,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'lib/assets/b1.png',
+                      'lib/assets/r1.jpg',
                       width: screenWidth * 0.4,
                     ),
                     SizedBox(height: 8),
@@ -276,7 +276,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'lib/assets/b1.png',
+                      'lib/assets/r2.jpg',
                       width: screenWidth * 0.4,
                     ),
                     SizedBox(height: 8),

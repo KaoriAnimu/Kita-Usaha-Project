@@ -94,10 +94,10 @@ class _StreamHistoryPageState extends State<StreamHistoryPage> {
   }
 
   final List<Map<String, String>> streams = [
-    {'image': 'lib/assets/b2.png', 'date': 'Live stream 06-05-2025'},
-    {'image': 'lib/assets/b2.png', 'date': 'Live stream 12-05-2025'},
-    {'image': 'lib/assets/b2.png', 'date': 'Live stream 01-04-2025'},
-    {'image': 'lib/assets/b2.png', 'date': 'Live stream 03-04-2025'},
+    {'image': 'lib/assets/r1.jpg', 'date': 'Live stream 06-05-2025'},
+    {'image': 'lib/assets/r2.jpg', 'date': 'Live stream 12-05-2025'},
+    {'image': 'lib/assets/r3.jpg', 'date': 'Live stream 01-04-2025'},
+    {'image': 'lib/assets/r4.jpg', 'date': 'Live stream 03-04-2025'},
   ];
 
   @override
