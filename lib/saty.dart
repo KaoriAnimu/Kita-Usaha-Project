@@ -56,7 +56,7 @@ class SmartAdsThankYouPage extends StatelessWidget {
               SizedBox(height: 40),
               Center(
                 child: Image.asset(
-                  'assets/email_icon.png',
+                  'lib/assets/p1.png',
                   width: 120,
                   height: 120,
                   fit: BoxFit.contain,

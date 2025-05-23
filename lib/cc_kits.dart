@@ -9,12 +9,12 @@ class _CCKitsPageState extends State<CCKitsPage> {
   String dropdownValue = 'Horizontal';
 
   final List<String> bannerImages = [
-    'lib/assets/b3.jpg',
-    'lib/assets/b3.jpg',
-    'lib/assets/b3.jpg',
-    'lib/assets/b3.jpg',
-    'lib/assets/b3.jpg',
-    'lib/assets/b3.jpg',
+    'lib/assets/c1.jpg',
+    'lib/assets/c2.jpg',
+    'lib/assets/c3.jpg',
+    'lib/assets/c4.jpg',
+    'lib/assets/c5.jpg',
+    'lib/assets/c6.jpg',
   ];
 
   Widget _buildDrawerMenu() {

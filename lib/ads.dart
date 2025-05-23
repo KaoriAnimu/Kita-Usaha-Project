@@ -223,7 +223,7 @@ class AdCard extends StatelessWidget {
               ),
               child: Center(
                 child: Image.asset(
-                  'lib/assets/b3.jpg',
+                  'lib/assets/d1.jpg',
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                 ),
