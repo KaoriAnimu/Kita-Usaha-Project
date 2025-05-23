@@ -30,14 +30,13 @@ class _StreamHistoryPageState extends State<StreamHistoryPage> {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                  backgroundImage: AssetImage('lib/assets/logo-kitausaha.png'),
                   backgroundColor: Colors.white,
                 ),
                 SizedBox(width: 14),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/home');
-                    print('Text tapped!');
                   },
                   child: Text(
                     'Live Shopping',

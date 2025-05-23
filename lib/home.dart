@@ -61,7 +61,7 @@ class HomeMenuPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Image.asset(
-                        'assets/kitausaha_logo.png',
+                        'lib/assets/logo-kitausaha.png',
                         width: 50,
                         height: 50,
                         fit: BoxFit.contain,
@@ -226,7 +226,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/live_shopping.png',
+                                  'lib/assets/live-shopping.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -267,7 +267,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/content-creator-kits.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -308,7 +308,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/Trade-Insight.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -349,7 +349,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/margin-wizard.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -438,7 +438,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/the-circle.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -479,7 +479,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/UMKM-Festival.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -520,7 +520,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/succes-bundle.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -561,7 +561,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/smart-ads.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>
@@ -602,7 +602,7 @@ class HomeMenuPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/content_creator.png',
+                                  'lib/assets/open-partnership.png',
                                   width: 40,
                                   height: 40,
                                   errorBuilder: (context, error, stackTrace) =>

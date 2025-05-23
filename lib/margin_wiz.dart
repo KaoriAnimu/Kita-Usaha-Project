@@ -64,7 +64,7 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.purple.shade400, Colors.orange.shade400],
+            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

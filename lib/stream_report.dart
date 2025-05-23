@@ -36,7 +36,7 @@ class _StreamReportPageState extends State<StreamReportPage> {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                  backgroundImage: AssetImage('lib/assets/logo-kitausaha.png'),
                   backgroundColor: Colors.white,
                 ),
                 SizedBox(width: 14),

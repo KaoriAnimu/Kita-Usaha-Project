@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Image.asset('assets/logo.png'),
+                  child: Image.asset('lib/assets/logo-kitausaha.png'),
                 ),
                 const SizedBox(height: 24),
                 const Text(

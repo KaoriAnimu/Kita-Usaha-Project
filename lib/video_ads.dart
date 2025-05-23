@@ -41,7 +41,8 @@ class _VAdsPageState extends State<VAdsPage> {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                    backgroundImage:
+                        AssetImage('lib/assets/logo-kitausaha.png'),
                     backgroundColor: Colors.white,
                   ),
                   SizedBox(width: 14),
@@ -191,7 +192,7 @@ class _VAdsPageState extends State<VAdsPage> {
                         value: value,
                         child: Text(value,
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: responsiveFontSize(screenWidth, 0.045),
                             )),
                       );

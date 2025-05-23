@@ -25,7 +25,6 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
       firstDate: DateTime(2023),
       lastDate: DateTime(2100),
       builder: (context, child) {
-        // Supaya dialog date picker juga dark mode
         return Theme(
           data: Theme.of(context).copyWith(
             colorScheme: ColorScheme.light(
@@ -60,13 +59,12 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
   Widget _inputField(TextEditingController controller, String hint) {
     return TextField(
       controller: controller,
-      style: TextStyle(color: Colors.white), // teks input warna putih
+      style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.transparent,
         hintText: hint,
-        hintStyle:
-            TextStyle(color: Colors.white70), // hint warna putih transparan
+        hintStyle: TextStyle(color: Colors.white70),
         contentPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 14),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -109,14 +107,13 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                  backgroundImage: AssetImage('lib/assets/logo-kitausaha.png'),
                   backgroundColor: Colors.white,
                 ),
                 SizedBox(width: 14),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/home');
-                    print('Text tapped!');
                   },
                   child: Text(
                     'Live Shopping',
