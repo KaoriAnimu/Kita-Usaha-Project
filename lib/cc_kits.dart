@@ -9,12 +9,12 @@ class _CCKitsPageState extends State<CCKitsPage> {
   String dropdownValue = 'Horizontal';
 
   final List<String> bannerImages = [
-    'assets/banner1.png',
-    'assets/banner2.png',
-    'assets/banner3.png',
-    'assets/banner4.png',
-    'assets/banner5.png',
-    'assets/banner6.png',
+    'lib/assets/b3.jpg',
+    'lib/assets/b3.jpg',
+    'lib/assets/b3.jpg',
+    'lib/assets/b3.jpg',
+    'lib/assets/b3.jpg',
+    'lib/assets/b3.jpg',
   ];
 
   Widget _buildDrawerMenu() {
@@ -130,7 +130,10 @@ class _CCKitsPageState extends State<CCKitsPage> {
         height: screenHeight * 1,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

@@ -32,7 +32,10 @@ class _CreateCirclePageState extends State<CreateCirclePage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF7A37E9), Color(0xFFFF9D55)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

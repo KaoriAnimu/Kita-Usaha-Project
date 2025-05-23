@@ -7,6 +7,7 @@ import 'package:kita_usaha_app/regis_umkm.dart';
 import 'package:kita_usaha_app/saty.dart';
 import 'package:kita_usaha_app/smart_ads.dart';
 import 'package:kita_usaha_app/success_bund.dart';
+import 'package:kita_usaha_app/trade-insight.dart';
 import 'package:kita_usaha_app/umkm.dart';
 import 'package:kita_usaha_app/umkm_fes.dart';
 
@@ -59,6 +60,7 @@ class KitaUsahaApp extends StatelessWidget {
         '/uf': (context) => UMKMFesPage(),
         '/rum': (context) => RegUMKMPage(),
         '/fs': (context) => FSPage(),
+        '/ts': (context) => const TSPage(),
       },
     );
   }

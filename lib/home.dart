@@ -37,7 +37,10 @@ class HomeMenuPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -88,7 +91,7 @@ class HomeMenuPage extends StatelessWidget {
                                     MediaQuery.of(context).size.height * 0.026,
                               ),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF8E24AA),
+                                color: Color.fromARGB(255, 42, 88, 44),
                               ),
                               child: Text(
                                 '"USAHA LEBIH MUDAH,\nBERKEMBANG LEBIH CEPAT"',
@@ -290,7 +293,7 @@ class HomeMenuPage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/sa');
+                            Navigator.pushNamed(context, '/ts');
                           },
                           child: Container(
                             decoration: BoxDecoration(

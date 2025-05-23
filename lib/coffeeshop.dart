@@ -13,7 +13,10 @@ class CoffeeShopPage extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.purple.shade800, Colors.orange.shade300],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

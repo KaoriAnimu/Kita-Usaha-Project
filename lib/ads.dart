@@ -129,7 +129,10 @@ class _AdsPageState extends State<AdsPage> {
         height: screenHeight * 2,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -219,10 +222,10 @@ class AdCard extends StatelessWidget {
                 color: Colors.grey.shade100,
               ),
               child: Center(
-                child: Icon(
-                  Icons.image,
-                  size: 48,
-                  color: Colors.grey.shade400,
+                child: Image.asset(
+                  'lib/assets/b3.jpg',
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
                 ),
               ),
             ),

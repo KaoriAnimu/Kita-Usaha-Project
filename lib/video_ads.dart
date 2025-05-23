@@ -130,7 +130,10 @@ class _VAdsPageState extends State<VAdsPage> {
         height: screenHeight * 1,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -214,8 +217,9 @@ class _VAdsPageState extends State<VAdsPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
-                        imagePath,
-                        fit: BoxFit.cover,
+                        'lib/assets/b3.jpg',
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
                       ),
                     ),
                   );

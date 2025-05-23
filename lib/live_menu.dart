@@ -174,7 +174,10 @@ class _LiveShoppingPageState extends State<LiveShoppingPage> {
         height: screenHeight * 2,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

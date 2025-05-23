@@ -30,7 +30,7 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/kitausaha_logo.png'),
+                  backgroundImage: AssetImage('lib/assets/logo-kitausaha.png'),
                   backgroundColor: Colors.white,
                 ),
                 SizedBox(width: 14),
@@ -110,7 +110,10 @@ class _UMKMFesPageState extends State<UMKMFesPage> {
         height: screenHeight,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

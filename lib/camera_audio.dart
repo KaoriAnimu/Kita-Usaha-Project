@@ -169,7 +169,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
       margin: EdgeInsets.only(bottom: 20),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.purple.shade700, width: 2),
+        border: Border.all(color: Color.fromARGB(255, 50, 82, 51), width: 2),
         borderRadius: BorderRadius.circular(8),
         color: Colors.white70,
       ),
@@ -178,7 +178,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
         children: [
           Text('PORTRAIT',
               style: TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.purple.shade800)),
+                  fontWeight: FontWeight.bold, color: Colors.green.shade800)),
           SizedBox(height: 12),
           Row(
             children: [
@@ -187,7 +187,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/portrait_example.png',
+                      'lib/assets/b1.png',
                       width: screenWidth * 0.4,
                     ),
                     SizedBox(height: 8),
@@ -258,7 +258,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
       margin: EdgeInsets.only(bottom: 20),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.purple.shade700, width: 2),
+        border: Border.all(color: Color.fromARGB(255, 50, 82, 51), width: 2),
         borderRadius: BorderRadius.circular(8),
         color: Colors.white70,
       ),
@@ -267,7 +267,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
         children: [
           Text('LANDSCAPE',
               style: TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.purple.shade800)),
+                  fontWeight: FontWeight.bold, color: Colors.green.shade800)),
           SizedBox(height: 12),
           Row(
             children: [
@@ -276,7 +276,7 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/landscape_example.png',
+                      'lib/assets/b1.png',
                       width: screenWidth * 0.4,
                     ),
                     SizedBox(height: 8),
@@ -355,7 +355,10 @@ class _CameraAudioSettingPageState extends State<CameraAudioSettingPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

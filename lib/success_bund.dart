@@ -18,7 +18,10 @@ class _PricingPageState extends State<PricingPage> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -114,7 +117,7 @@ class _PricingPageState extends State<PricingPage> {
                   PricingCard(
                     title: 'BASIC',
                     price: isMonthly ? 'Rp 0 / Mo.' : 'Rp 0 / Mo.',
-                    iconPath: 'assets/rocket1.png',
+                    iconPath: 'lib/assets/b3.jpg',
                     features: [
                       Feature(text: 'No Ads', isAvailable: false),
                       Feature(
@@ -136,7 +139,7 @@ class _PricingPageState extends State<PricingPage> {
                   PricingCard(
                     title: 'PRO',
                     price: isMonthly ? 'Rp 59.000 / Mo.' : 'Rp 59.000 / Mo.',
-                    iconPath: 'assets/rocket2.png',
+                    iconPath: 'lib/assets/b3.jpg',
                     features: [
                       Feature(text: 'No Ads', isAvailable: true),
                       Feature(
@@ -158,7 +161,7 @@ class _PricingPageState extends State<PricingPage> {
                   PricingCard(
                     title: 'PRO +',
                     price: isMonthly ? 'Rp 89.000 / Mo.' : 'Rp 89.000 / Mo.',
-                    iconPath: 'assets/rocket3.png',
+                    iconPath: 'lib/assets/b3.jpg',
                     features: [
                       Feature(text: 'No Ads', isAvailable: true),
                       Feature(

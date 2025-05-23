@@ -94,10 +94,10 @@ class _StreamHistoryPageState extends State<StreamHistoryPage> {
   }
 
   final List<Map<String, String>> streams = [
-    {'image': 'assets/stream1.jpg', 'date': 'Live stream 06-05-2025'},
-    {'image': 'assets/stream2.jpg', 'date': 'Live stream 12-05-2025'},
-    {'image': 'assets/stream3.jpg', 'date': 'Live stream 01-04-2025'},
-    {'image': 'assets/stream4.jpg', 'date': 'Live stream 03-04-2025'},
+    {'image': 'lib/assets/b2.png', 'date': 'Live stream 06-05-2025'},
+    {'image': 'lib/assets/b2.png', 'date': 'Live stream 12-05-2025'},
+    {'image': 'lib/assets/b2.png', 'date': 'Live stream 01-04-2025'},
+    {'image': 'lib/assets/b2.png', 'date': 'Live stream 03-04-2025'},
   ];
 
   @override
@@ -121,7 +121,10 @@ class _StreamHistoryPageState extends State<StreamHistoryPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

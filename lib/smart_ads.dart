@@ -23,7 +23,10 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -257,7 +260,7 @@ class _SmartAdsPageState extends State<SmartAdsPage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.asset(
-                    'assets/tangerang_selatan_map.png',
+                    'lib/assets/b4.png',
                     fit: BoxFit.cover,
                   ),
                 ),

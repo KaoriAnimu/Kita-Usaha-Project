@@ -64,7 +64,10 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
+            colors: [
+              Color.fromARGB(255, 112, 208, 83),
+              Color.fromARGB(255, 50, 82, 51)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -98,13 +101,13 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                  color: Colors.white,
                 ),
               ),
               SizedBox(height: 12),
               Text(
                 "Harga Pokok Produksi (HPP):",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 4),
               TextField(
@@ -120,7 +123,7 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
               SizedBox(height: 12),
               Text(
                 "Biaya Operasional:",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 4),
               TextField(
@@ -136,7 +139,7 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
               SizedBox(height: 12),
               Text(
                 "Margin Keuntungan (%):",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 4),
               TextField(
@@ -152,7 +155,7 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
               SizedBox(height: 12),
               Text(
                 "Target Laba Bulanan (Jika Ada):",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 4),
               TextField(
@@ -183,32 +186,32 @@ class _MarginWizardPageState extends State<MarginWizardPage> {
               SizedBox(height: 20),
               Text(
                 "Harga Jual (sebelum diskon): $hasilHargaJual",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 6),
               Text(
                 "Laba per Produk: $hasilLabaProduk",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 6),
               Text(
                 "Harga Jual Setelah Diskon: $hasilHargaJualDiskon",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 6),
               Text(
                 "Laba Setelah Diskon: $hasilLabaDiskon",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 6),
               Text(
                 "Break Even Point (BEP) - Unit: $hasilBEP",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
               SizedBox(height: 6),
               Text(
                 "Jumlah Produk untuk Capai Target Laba Bulanan: $hasilJumlahProduk",
-                style: TextStyle(color: Colors.black87),
+                style: TextStyle(color: Colors.white),
               ),
             ],
           ),
